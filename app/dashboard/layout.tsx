@@ -6,6 +6,7 @@ import { CircleUser, MenuIcon } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
     // gets client server session credentials
@@ -13,11 +14,11 @@ export default async function DashboardLayout({ children }: { children: ReactNod
     const user = await getUser()
 
     // if user doesnt exist
-    if(!user) {
+    if(!user || user.email !== "trishaneww@gmail.com") {
         return redirect('/')
     }
 
-    
+
     return (
         <div className="flex w-full flex-col mx-auto px-4 sm:px-6 lg:px-8">
             <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white text-black">
@@ -45,9 +46,13 @@ export default async function DashboardLayout({ children }: { children: ReactNod
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <LogoutLink>Logout</LogoutLink>
+
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
+               
             </header>
 
         </div>
