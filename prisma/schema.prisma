@@ -45,3 +45,11 @@ enum Category {
   women
   kids
 }
+
+
+enum menuItem {
+  normal
+  regualr
+  kids
+}
+
