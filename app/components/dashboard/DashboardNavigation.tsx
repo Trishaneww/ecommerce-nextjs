@@ -28,7 +28,8 @@ export function DashboardNavigation() {
     return (
         <>
             {links.map((link, idx) => (
-                <Link key={idx} href={link.href} className={cn(link.href === pathname ? 'text-foreground' : 'text-muted-foreground hover:text-foreground')}>{link.name}</Link>
+                <Link key={idx} href={link.href} className={cn(link.href === pathname ? 'text-foreground' : 'text-muted-foreground hover:text-foreground')}>{link.name}
+                </Link>
             ))}
         </>
     )
