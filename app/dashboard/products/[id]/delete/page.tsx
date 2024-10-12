@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function DeleteRoute() {
     return (
@@ -12,8 +13,12 @@ export default function DeleteRoute() {
                     </CardDescription>
                 </CardHeader>
                 <CardFooter className="w-full flex justify-between">
-                    <Button variant="secondary">Cancel</Button>
-                    <Button variant="destructive">Continue</Button>
+                    <Button variant="secondary" asChild>
+                        <Link href="/dashboard/products">Cancel</Link>
+                    </Button>
+                    <form>
+                        <Button variant="destructive">Continue</Button>
+                    </form>
                 </CardFooter>
             </Card>
 
