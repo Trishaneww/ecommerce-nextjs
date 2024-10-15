@@ -77,7 +77,7 @@ export default async function ProductRoute() {
                                             <Link href={`/dashboard/products/${item.id}`}>Edit</Link>
                                             </DropdownMenuItem>
                                             <DropdownMenuItem>
-                                                <Link href={`/dashboard.products/${item.id}/delete`}>
+                                                <Link href={`/dashboard/products/${item.id}/delete`}>
                                                 Delete</Link>
                                             </DropdownMenuItem>
 
